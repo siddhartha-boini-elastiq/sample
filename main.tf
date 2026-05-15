@@ -15,3 +15,19 @@ resource "google_storage_bucket" "demo" {
   location                    = var.region
   uniform_bucket_level_access = true
 }
+
+resource "google_compute_instance" "demo" {
+  name         = var.instance_name
+  machine_type = "e2-micro"
+  zone         = "us-central1-a"
+
+  boot_disk {
+    initialize_params {
+      image = "debian-cloud/debian-12"
+    }
+  }
+
+  network_interface {
+    network = "default"
+  }
+}
