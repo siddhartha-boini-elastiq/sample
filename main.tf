@@ -1,6 +1,6 @@
 terraform {
   backend "gcs" {
-    bucket = "kanika-agrawal-poc-tfstate-19b"
+    bucket = "discover-infra-siddhartha-boini-poc-tfstate"
     prefix = "ci"
   }
 }
